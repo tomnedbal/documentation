@@ -18,6 +18,7 @@ dependencies:
 supported_os:
     - linux
     - windows
+integration_id: "syslog_ng"
 ---
 
 ## Overview

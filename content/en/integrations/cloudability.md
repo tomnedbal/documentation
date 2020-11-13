@@ -16,6 +16,7 @@ further_reading:
     - link: 'https://support.cloudability.com/hc/en-us/articles/360011041074-Integration-with-Datadog-how-to-add-your-Datadog-Credentials-to-Cloudability'
       tag: 'External Documentation'
       text: 'How to Add Your Datadog Credentials to Cloudability'
+integration_id: "cloudability"
 ---
 
 ## Overview

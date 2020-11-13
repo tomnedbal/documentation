@@ -13,6 +13,7 @@ categories:
     - notification
     - web
 ddtype: crawler
+integration_id: "rss"
 ---
 
 {{< img src="integrations/rss/rss.png" alt="RSS event"  >}}
