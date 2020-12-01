@@ -108,25 +108,25 @@
                     <a class="card-img" href="{{ (print "integrations/" ($urlname | lower)) | absLangURL }}">
                         {{ $.Scratch.Set "url" ""}}
                         {{ if $indx }}
-                            {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx "?auto=format") | safeURL }}
+                            {{ if or (in $indx "amazon") (in $indx "google") (in $indx "microsoft") }}
+                                {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx (print "?txt=" $formatname "&txt-size=22&txt-color=ff2e4357&txt-align=bottom,center&txt-font=Futura Condensed Medium")) | safeURL }}
+                            {{ else }}
+                                {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx "") | safeURL }}
+                            {{ end }}
                         {{ else }}
                             {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) "integrations_logos/dd-noimage.png" "?auto=format") | safeURL }}
                         {{ end }}
                         {{ $url := $.Scratch.Get "url" }}
                         <picture class="mx-auto">
-                            <source srcset="{{ $url }}&w=144 1x, {{ $url }}&w=144&dpr=2 2x" media="(min-width: 530px)">
-                            <source srcset="{{ $url }}&w=200 1x, {{ $url }}&w=200&dpr=2 2x" media="(min-width: 0px)">
                             <img class="img-fluid mx-auto"
-                                 srcset="{{ $url }}&w=144"
+                                 src="{{ $url }}"
                                  alt="integration">
                         </picture>
                     </a>
                     <a class="card-img-gray" href="{{ (print "integrations/" ($urlname | lower)) | absLangURL }}">
                         <picture class="mx-auto">
-                            <source srcset="{{ $url }}&w=144&sat=-100 1x, {{ $url }}&w=144&sat=-100&dpr=2 2x" media="(min-width: 530px)">
-                            <source srcset="{{ $url }}&w=200&sat=-100 1x, {{ $url }}&w=400&sat=-100&dpr=2 2x" media="(min-width: 0px)">
                             <img class="img-fluid mx-auto"
-                                 srcset="{{ $url }}&w=144&sat=-100"
+                                 src="{{ $url }}&sat=-100"
                                  alt="integration">
                         </picture>
                     </a>
