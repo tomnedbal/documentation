@@ -108,8 +108,8 @@
                     <a class="card-img" href="{{ (print "integrations/" ($urlname | lower)) | absLangURL }}">
                         {{ $.Scratch.Set "url" ""}}
                         {{ if $indx }}
-                            {{ if or (in $indx "amazon") (in $indx "google") (in $indx "microsoft") }}
-                                {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx (print "?txt=" $formatname "&txt-size=22&txt-color=ff2e4357&txt-align=bottom,center&txt-font=Futura Condensed Medium")) | safeURL }}
+                            {{ if or (in $indx "amazon") (in $indx "aws") (in $indx "google") (in $indx "microsoft") (in $indx "azure") }}
+                                {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx (print "?txt=" $formatname "&txt-size=22&txt-color=ff2e4357&txt-align=bottom,center&txt-font=Futura Condensed Medium&txt-pad=10&txt-clip=end,ellipsis&fit=fill&fill=solid&fill-color=ffffff&w=200&h=195&pad-bottom=30&bg=FFFFFF")) | safeURL }}
                             {{ else }}
                                 {{ $.Scratch.Set "url" (print (.Site.Params.integrations_img_url) $indx "") | safeURL }}
                             {{ end }}
@@ -126,8 +126,8 @@
                     <a class="card-img-gray" href="{{ (print "integrations/" ($urlname | lower)) | absLangURL }}">
                         <picture class="mx-auto">
                             <img class="img-fluid mx-auto"
-                                 src="{{ $url }}&sat=-100"
-                                 alt="integration">
+                                 src="{{ $url }}"
+                                 alt="integration" style="filter: saturate(0%);">
                         </picture>
                     </a>
                     <div class="text-center title">{{ $formatname }}</div>
