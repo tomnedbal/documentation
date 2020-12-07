@@ -78,7 +78,8 @@ Go into your [AWS console][1] and [create an S3 bucket][2] to send your archives
 
 {{% tab "Azure Storage" %}}
 
-Go to your [Azure Portal][1] and [create a storage account][2] to send your archives to. Give your storage account a name, any account kind, and select the **hot** access tier.
+* Go to your [Azure Portal][1] and [create a storage account][2] to send your archives to. Give your storage account a name, any account kind, and select the **hot** access tier.
+* Create a **container** service into that storage account. Please take a note of the container name as you will need to add this in Datadog Archive Page. 
 
 [1]: https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts
 [2]: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal
@@ -182,7 +183,7 @@ Input your bucket name. **Optional**: Input a prefix directory for all the conte
 
 Select the **Azure Storage** archive type, and the Azure tenant and client for the Datadog App that has the Storage Blob Data Contributor role on your storage account.
 
-Input your storage account name and a container name for your archive. **Optional**: Input a prefix directory for all the content of your log archives.
+Input your storage account name and the container name for your archive. **Optional**: Input a prefix directory for all the content of your log archives.
 
 {{< img src="logs/archives/logs_archive_azure_setup.png" alt="Set your Azure storage account info in Datadog"  style="width:75%;">}}
 
@@ -221,7 +222,7 @@ Use this optional configuration step to assign roles on that archive and restric
 
 Use this configuration optional step to:
 
-* Include all log tags in your archives (activated by default). **Note**: this increases the size of resulting archives.  
+* Include all log tags in your archives (activated by default on all new archives). **Note**: This increases the size of resulting archives.  
 * Add tags on rehydrated logs according to your Restriction Queries policy. See [logs_read_data][9] permission.
 
 {{< img src="logs/archives/tags_in_out.png" alt="Configure Archive Tags"  style="width:75%;">}}
@@ -352,7 +353,7 @@ This directory structure simplifies the process of querying your historical log 
 
 Within the zipped JSON file, each event’s content is formatted as follows:
 
-```text
+```json
 {
     "_id": "123456789abcdefg",
     "date": "2018-05-15T14:31:16.003Z",
@@ -360,12 +361,13 @@ Within the zipped JSON file, each event’s content is formatted as follows:
     "source": "source_name",
     "service": "service_name",
     "status": "status_level",
-    "message": " ... log message content ... ",
-    "attributes": { ... log attributes content ... }
+    "message": "2018-05-15T14:31:16.003Z INFO rid='acb-123' status=403 method=PUT",
+    "attributes": { "rid": "abc-123", "http": { "status_code": 403, "method": "PUT" } },
+    "tags": [ "env:prod", "team:acme" ]
 }
 ```
 
-**Note**: Archives only include log content, which consists of the message, custom attributes, and reserved attributes of your log events. By default, the log tags (metadata that connects your log data to related metrics and traces) are not included.
+**Note**: Adding tags in archives is an opt-in feature - see in the [Datadog tags section](#datadog-tags) to enable it for an archive.
 
 ## Further Reading
 

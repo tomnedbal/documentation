@@ -14,13 +14,13 @@ further_reading:
 
 After following the [Amazon ECS agent installation instructions][1], enable trace collection per the instructions below.
 
-1. Set the following parameters in the task definition for the `datadog/agent` container. Set the `portMappings` host / container port to `8126` with protocol `tcp`:
+1. Set the following parameters in the task definition for the `gcr.io/datadoghq/agent` container. Set the `portMappings` host / container port to `8126` with protocol `tcp`:
 
     {{< code-block lang="json" >}}
     containerDefinitions": [
     {
       "name": "datadog-agent",
-      "image": "datadog/agent:latest",
+      "image": "gcr.io/datadoghq/agent:latest",
       "cpu": 10,
       "memory": 256,
       "essential": true,
@@ -95,15 +95,14 @@ For more examples of setting the Agent hostname in other languages, refer to the
 {{% tab "Node.js" %}}
 
 ```javascript
-const tracer = require('dd-trace');
+const tracer = require('dd-trace').init();
 const request = require('request');
-
 request('http://169.254.169.254/latest/meta-data/local-ipv4', function(
     error,
     resp,
     body
 ) {
-    tracer.init({ hostname: body });
+    tracer.setUrl(`http://${hostname}:8126`)
 });
 ```
 

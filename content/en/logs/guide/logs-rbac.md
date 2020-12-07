@@ -25,7 +25,7 @@ Logs might contain **sensitive information** that could either get [scrubbed][1]
 This guide provides a methodology in developing customized Datadog roles that allows users to access logs and log features in a compliant manner.
 
 <div class="alert alert-warning">
-Creating and modifying custom roles is an Enterprise feature and is in private beta. <a href="/help">Contact Datadog support</a> to get it enabled for your account.
+Creating and modifying custom roles is an opt-in feature. <a href="/help">Contact Datadog support</a> to get it enabled for your account.
 </div>
 
 ### The "ACME" Team
@@ -385,7 +385,7 @@ Assign the [Write Historical View][19] permission to members of `ACME Admin`. Th
 
 {{< img src="logs/guide/rbac/archives.png" alt="ACME Tags at Rehydration"  style="width:60%;">}}
 
-**Note**: **If** you use the [Legacy Read Index Data Permission][21], add the `ACME User` role to ACME archive(s) alongside the `ACME User` role. As `ACME User` role members don't have the permission to perform rehydration, this does not give them sensitive permissions. However, this automatically scopes the Read Index Data permission to the resulting historical view, so that they can access the content.
+**Note**: **If** you use the [Legacy Read Index Data Permission][21], add the `ACME User` role to ACME archive(s) alongside the `ACME Admin` role. As `ACME User` role members don't have the permission to perform rehydration, this does not give them sensitive permissions. However, this automatically scopes the Read Index Data permission to the resulting historical view, so that they can access the content.
 
 {{< img src="logs/guide/rbac/rehydration_index.png" alt="Rehydration Index Permission"  style="width:60%;">}}
 
