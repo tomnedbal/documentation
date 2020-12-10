@@ -1006,6 +1006,11 @@ main:
     parent: metrics_top_level
     identifier: metrics_distributions
     weight: 904
+  - name: Advanced Filtering
+    url: metrics/advanced-filtering/
+    parent: metrics_top_level
+    identifier: metrics_advanced_filtering
+    weight: 905
   - name: Notebooks
     url: notebooks/
     identifier: notebooks
