@@ -91,7 +91,7 @@ For any particular tag key, you can:
 - Open a graph of this metric filtered by your tag key:value pair in Metrics Explorer.
 - Copy any tag key:value for easier filtering across the application.
 
-{{< img src="metrics/summary/tags_table.gif" alt="Tags Table  style="width:75%;">}}
+{{< img src="metrics/summary/tags_table.gif" alt="Tags Table"  style="width:75%;">}}
 
 [Learn more about tagging][5].
 
