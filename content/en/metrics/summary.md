@@ -24,7 +24,7 @@ The [Metrics Summary page][1] displays a list of your metrics reported to Datado
 
 Click on any metric name to display its details sidepanel for more detailed information regarding the metric’s metadata and tags: 
 
-{{< img src="metrics/summary/metric_panel2.png" alt="Metric panel"  style="width:75%;">}}
+{{< img src="metrics/summary/metric_panel3.png" alt="Metric panel"  style="width:75%;">}}
 
 ### Metric name
 
