@@ -31,21 +31,27 @@ The following syntax is supported for Boolean filtered metric queries:
 - `NOT`, `not`
 - `AND`, `and`
 - `OR`, `or`
-- `IN`; syntax: *(<TAG_1>, <TAG_2>, ...), in (<TAG_1>, <TAG_2>, ...)*
-- `NOT IN`; syntax: *(<TAG_1>, <TAG_2>, ...), not in (<TAG_1>, <TAG_2>, ...)*
+- `IN`, `in`
+- `NOT IN`, `not in`
 
 #### Boolean query examples
 
 {{< img src="metrics/advanced-filtering/ex1.png" alt="Example 1"  style="width:80%;" >}}
 
-`avg:system.cpu.user{env:staging AND (availability-zone:us-east-1a OR availability-zone:us-east-1c)} by {availability-zone}`
+```
+avg:system.cpu.user{env:staging AND (availability-zone:us-east-1a OR availability-zone:us-east-1c)} by {availability-zone}
+```
 
 
 {{< img src="metrics/advanced-filtering/ex2.gif" alt="Example 2"  style="width:80%;" >}}
 
-`avg:system.cpu.user{env:shop.ist AND availability-zone IN (us-east-1a, us-east-1c, us-east-1d)} by {availability-zone}`
+```
+avg:system.cpu.user{env:shop.ist AND availability-zone IN (us-east-1a, us-east-1c, us-east-1d)} by {availability-zone}
+```
 
 
 {{< img src="metrics/advanced-filtering/ex3.gif" alt="Example 3"  style="width:80%;" >}}
 
-`avg:system.cpu.user{app NOT IN (village)} by {app}`
+```
+avg:system.cpu.user{app NOT IN (village)} by {app}
+```
