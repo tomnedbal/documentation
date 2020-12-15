@@ -73,6 +73,17 @@
       - "*/assets/service_checks.json"
       - "*/README.md"
 
+  - repo_name: marketplace
+    contents:
+
+    - action: integrations
+      branch: master
+      globs:
+      - "*/metadata.csv"
+      - "*/manifest.json"
+      - "*/assets/service_checks.json"
+      - "*/README.md"
+
   - repo_name: ansible-datadog
     contents:
 
