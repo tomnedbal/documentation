@@ -221,6 +221,20 @@
     "request_description": "",
     "request_schema_description": "The request for a logs list."
   },
+  "ListOrganizationLoginMethods": {
+    "description": "Get all login methods for current organization",
+    "summary": "Get all login methods for current organization"
+  },
+  "CreateOrganizationLoginMethod": {
+    "description": "Create a login method for the current organization.",
+    "summary": "Create a login method for the current organization",
+    "request_description": "",
+    "request_schema_description": "Request used to create an organization login method"
+  },
+  "DeleteOrganizationLoginMethod": {
+    "description": "Delete the given org login method.",
+    "summary": "Delete the given organization login method"
+  },
   "ListPermissions": {
     "description": "Returns a list of all permissions, including name, description, and ID.",
     "summary": "List permissions"
@@ -376,6 +390,20 @@
   "GetInvitation": {
     "description": "Returns a single user invitation by its UUID.",
     "summary": "Get a user invitation"
+  },
+  "ListUserLoginMethods": {
+    "description": "Get all of the given user's login methods.",
+    "summary": "Get all of the given user's login methods"
+  },
+  "CreateUserLoginMethod": {
+    "description": "Create a login method for the given user.",
+    "summary": "Create a login method for the given user",
+    "request_description": "",
+    "request_schema_description": "Request used to create a user login method"
+  },
+  "DeleteUserLoginMethod": {
+    "description": "Delete the given user login method.",
+    "summary": "Delete the given user login method"
   },
   "ListUsers": {
     "description": "Get the list of all users in the organization. This list includes\nall users even if they are deactivated or unverified.",

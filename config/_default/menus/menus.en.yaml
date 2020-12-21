@@ -2423,6 +2423,34 @@ api_v1:
     parent: Dashboards
     url: '#create-a-new-dashboard'
     generated: true
+  - name: Create a public dashboard
+    parent: Dashboards
+    url: '#create-a-public-dashboard'
+    generated: true
+  - name: Revoke a public dashboard URL
+    parent: Dashboards
+    url: '#revoke-a-public-dashboard-url'
+    generated: true
+  - name: Get a public dashboard
+    parent: Dashboards
+    url: '#get-a-public-dashboard'
+    generated: true
+  - name: Update a public dashboard
+    parent: Dashboards
+    url: '#update-a-public-dashboard'
+    generated: true
+  - name: Revoke public dashboard invitations
+    parent: Dashboards
+    url: '#revoke-public-dashboard-invitations'
+    generated: true
+  - name: Get all invitations for a public dashboard
+    parent: Dashboards
+    url: '#get-all-invitations-for-a-public-dashboard'
+    generated: true
+  - name: Send public dashboard invitation email
+    parent: Dashboards
+    url: '#send-public-dashboard-invitation-email'
+    generated: true
   - name: Delete a dashboard
     parent: Dashboards
     url: '#delete-a-dashboard'
@@ -2606,6 +2634,10 @@ api_v1:
   - name: Edit an application key
     parent: Key Management
     url: '#edit-an-application-key'
+    generated: true
+  - name: Login Methods
+    url: /api/v1/login-methods/
+    identifier: Login Methods
     generated: true
   - name: Logs
     url: /api/v1/logs/
@@ -3496,6 +3528,34 @@ api_v2:
   - name: Edit an application key owned by current user
     parent: Key Management
     url: '#edit-an-application-key-owned-by-current-user'
+    generated: true
+  - name: Login Methods
+    url: /api/v2/login-methods/
+    identifier: Login Methods
+    generated: true
+  - name: Get all login methods for current organization
+    parent: Login Methods
+    url: '#get-all-login-methods-for-current-organization'
+    generated: true
+  - name: Create a login method for the current organization
+    parent: Login Methods
+    url: '#create-a-login-method-for-the-current-organization'
+    generated: true
+  - name: Delete the given organization login method
+    parent: Login Methods
+    url: '#delete-the-given-organization-login-method'
+    generated: true
+  - name: Get all of the given user's login methods
+    parent: Login Methods
+    url: '#get-all-of-the-given-users-login-methods'
+    generated: true
+  - name: Create a login method for the given user
+    parent: Login Methods
+    url: '#create-a-login-method-for-the-given-user'
+    generated: true
+  - name: Delete the given user login method
+    parent: Login Methods
+    url: '#delete-the-given-user-login-method'
     generated: true
   - name: Logs
     url: /api/v2/logs/
