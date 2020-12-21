@@ -7307,6 +7307,35 @@ components:
           description: Name of the global variable.
           example: MY_VARIABLE
           type: string
+        parse_test_options:
+          description: Parser options to use for a Synthetics global variable from
+            test, to use in addition to parse_test_public_id.
+          properties:
+            parser:
+              description: Details of the parser to use for the global variable.
+              example:
+                type: regex
+                value: .*
+              properties:
+                type:
+                  $ref: '#/components/schemas/SyntheticsGlobalVariableParserType'
+                value:
+                  description: Regex or JSON path used for the parser.
+                  type: string
+              required:
+              - type
+              type: object
+            type:
+              $ref: '#/components/schemas/SyntheticsGlobalVariableParseTestOptionsType'
+          required:
+          - type
+          - parser
+          type: object
+        parse_test_public_id:
+          description: A Synthetic test ID to use as test to generate the variable
+            value.
+          example: abc-def-123
+          type: string
         tags:
           description: Tags of the global variable.
           example:
@@ -7324,6 +7353,26 @@ components:
       - tags
       - value
       type: object
+    SyntheticsGlobalVariableParseTestOptionsType:
+      description: Property to parse for a Synthetics global variable from test.
+      enum:
+      - http_body
+      - http_header
+      type: string
+      x-enum-varnames:
+      - HTTP_BODY
+      - HTTP_HEADER
+    SyntheticsGlobalVariableParserType:
+      description: Type of parser for a Synthetics global variable from test.
+      enum:
+      - raw
+      - json_path
+      - regex
+      type: string
+      x-enum-varnames:
+      - RAW
+      - JSON_PATH
+      - REGEX
     SyntheticsGlobalVariableValue:
       description: Value of the global variable.
       example:
